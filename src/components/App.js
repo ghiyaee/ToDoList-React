@@ -28,6 +28,7 @@ const App = () => {
     const onCliked = () => {
         if (!drop) {
             setDrop(true)
+
             setText('CLOSE')
    
         } else {
@@ -37,7 +38,8 @@ const App = () => {
     }
     const onAddValue = (newCalender) => {
        const newCal = calender.push(newCalender)
-       setCalenders(newCal);
+        setCalenders(newCal);
+       
     }
     const onDelHandel = (e,index) => {
         const filter = calender.splice(index,1)
@@ -47,7 +49,7 @@ const App = () => {
         <>
         <div className="container">
             <Header text={text} onCliked={onCliked} />
-            {drop ? <Form onValue={onAddValue} />: null}
+            {drop ? <Form onValue={onAddValue}  />: null}
             {calender.length != 0 ? <Items value={calender} onDel={onDelHandel} /> : `EMPTY  AT   CALENDER`}
        </div>
         </>

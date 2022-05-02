@@ -15,7 +15,7 @@ const Form = ({onValue}) => {
           e.preventDefault()
     }
     return(
-            <div className="form" >
+            <div className="form"  >
             <input type="text"
                 value={work}
                 placeholder="INTER A WORKS DAILY"
