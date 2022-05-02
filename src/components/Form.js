@@ -1,11 +1,11 @@
-import { useState } from "react"
-import "./Form.css"
+import { useState } from "react";
+import "./Form.css";
 const Form = ({onValue}) => {
     const [work,setWork] = useState('')
     const [time, setTime] = useState('') 
     const onValidtion = (e) => {
-         if (!work&&!time) {
-             return;
+         if (!work && !time) {
+             return 
          }
         const id=Math.floor(Math.random()*1000)
          const newCalender={id ,work,time}
@@ -20,7 +20,7 @@ const Form = ({onValue}) => {
                 value={work}
                 placeholder="INTER A WORKS DAILY"
                 onChange={e => { setWork(e.target.value); }}>
-                </input>
+          </input>
             <input type="text"
                 value={time}
                 placeholder="INTER A CLOCK "
@@ -33,7 +33,7 @@ const Form = ({onValue}) => {
                 value="SAVE"
                 className="save"
                 onClick={onValidtion} >
-                </input>
+            </input>
         </div>
     )
 }

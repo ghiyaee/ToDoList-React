@@ -16,6 +16,7 @@
 .works{
     display: flex;
     align-items: center;
+    flex-direction: column;
     
 }
 .works h3, p {

@@ -8,11 +8,12 @@
     padding: 15px;
     margin: 10px;
     width: 65%;
-    border-radius: 7px;
+    border: none;
     outline: none;
+    border-bottom: 2px solid rgba(1, 209, 105, 0.884);
 }
 .form .save{
-      background: lightgreen;
+    background: lightgreen;
     border-radius: 7px;
     border: none;
     cursor: pointer;

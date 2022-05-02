@@ -7,7 +7,7 @@ import Items from "./Items"
 const calender = [
     {
         id: 1,
-        work: 'CONEDING',
+        work: 'CODEING',
         time: '7:30 to 90:30'
     },
     {
@@ -17,7 +17,7 @@ const calender = [
     },
     {
         id: 3,
-        work: 'codeing',
+        work: 'READING',
         time: '16:30 to 18:30'
     },
 ]
@@ -43,12 +43,14 @@ const App = () => {
         const filter = calender.splice(index,1)
         setCalenders(filter)
     }
-    return(
+    return (
+        <>
         <div className="container">
             <Header text={text} onCliked={onCliked} />
             {drop ? <Form onValue={onAddValue} />: null}
             {calender.length != 0 ? <Items value={calender} onDel={onDelHandel} /> : `EMPTY  AT   CALENDER`}
-        </div>
+       </div>
+        </>
     )
 }
 export default App
