@@ -16,10 +16,24 @@ const Form = ({onValue}) => {
     }
     return(
             <div className="form" >
-                <input type="text" value={work} placeholder="INTER A WORKS DAILY" onChange={e=>{setWork(e.target.value);}}></input>
-                <input type="text" value={time} placeholder="INTER A CLOCK " onChange={e=>{setTime(e.target.value)}}></input>
-                <input type="checkbox" placeholder="inter a work" ></input>
-                <input type="submit" value="SAVE" className="save" onClick={onValidtion} ></input>
+            <input type="text"
+                value={work}
+                placeholder="INTER A WORKS DAILY"
+                onChange={e => { setWork(e.target.value); }}>
+                </input>
+            <input type="text"
+                value={time}
+                placeholder="INTER A CLOCK "
+                onChange={e => { setTime(e.target.value) }}>
+                </input>
+            <input type="checkbox"
+                placeholder="inter a work" >
+                </input>
+            <input type="submit"
+                value="SAVE"
+                className="save"
+                onClick={onValidtion} >
+                </input>
         </div>
     )
 }
