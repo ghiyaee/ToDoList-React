@@ -23,7 +23,7 @@ const calender = [
 ]
 const App = () => {
     const [drop, setDrop] = useState(false)
-    const [addcal, setAddcal] = useState(calender)
+    const [calenders, setCalenders] = useState(calender)
     const onCliked = () => {
         if (!drop) {
             setDrop(true)
@@ -32,13 +32,13 @@ const App = () => {
             setDrop(false)
        }
     }
-    const onAddValue = (obj) => {
-       const newCal=  calender.push(obj)
-       setAddcal(newCal);
+    const onAddValue = (newCalender) => {
+       const newCal = calender.push(newCalender)
+       setCalenders(newCal);
     }
     const onDelHandel = (e,index) => {
         const filter = calender.splice(index,1)
-        setAddcal(filter)
+        setCalenders(filter)
     }
     return(
         <div className="container">
