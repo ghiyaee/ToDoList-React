@@ -1,9 +1,9 @@
 import "./Header.css"
-const Header = () => {
+const Header = ({onCliked}) => {
     return(
        <div className="header">
             <h3>Calendar Daily</h3>
-            <button>Add</button>
+            <button onClick={onCliked}>Add</button>
         </div>
     )
 }

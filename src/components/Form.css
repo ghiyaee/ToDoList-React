@@ -8,6 +8,8 @@
     padding: 15px;
     margin: 10px;
     width: 65%;
+    border-radius: 7px;
+    outline: none;
 }
 .form .save{
     background: rgb(185, 179, 179);
