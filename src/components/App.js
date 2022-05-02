@@ -42,13 +42,12 @@ const App = () => {
     const onDelHandel = (e,index) => {
         const filter = calender.splice(index,1)
         setCalenders(filter)
-       
     }
     return(
         <div className="container">
             <Header text={text} onCliked={onCliked} />
             {drop ? <Form onValue={onAddValue} />: null}
-            <Items value={calender} onDel={onDelHandel }/>
+            {calender.length != 0 ? <Items value={calender} onDel={onDelHandel} /> : 'EMPTY  CALENDER'}
         </div>
     )
 }
