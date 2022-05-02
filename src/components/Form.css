@@ -1,0 +1,17 @@
+.form{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form input{
+    padding: 15px;
+    margin: 10px;
+    width: 65%;
+}
+.form .save{
+    background: rgb(185, 179, 179);
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+}
