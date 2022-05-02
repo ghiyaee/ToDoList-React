@@ -24,12 +24,15 @@ const calender = [
 const App = () => {
     const [drop, setDrop] = useState(false)
     const [calenders, setCalenders] = useState(calender)
+    const [text,setText]=useState('ADD')
     const onCliked = () => {
         if (!drop) {
             setDrop(true)
+            setText('CLOSE')
    
         } else {
             setDrop(false)
+            setText('ADD')
        }
     }
     const onAddValue = (newCalender) => {
@@ -39,10 +42,11 @@ const App = () => {
     const onDelHandel = (e,index) => {
         const filter = calender.splice(index,1)
         setCalenders(filter)
+       
     }
     return(
         <div className="container">
-            <Header onCliked={onCliked} />
+            <Header text={text} onCliked={onCliked} />
             {drop ? <Form onValue={onAddValue} />: null}
             <Items value={calender} onDel={onDelHandel }/>
         </div>

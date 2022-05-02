@@ -2,14 +2,14 @@
     display: flex;
     justify-content:space-around;
     width: 70%;
-    /* background-color: rgb(235, 233, 233); */
      margin: 10px;
     border-radius: 7px;
-     border: 1px solid #eee;
+     border: 1px solid rgb(211, 210, 210);
 }
 .header h3 ,button{
     padding: 20px;
     margin: 5px;
+    font-size: 2rem;
 }
 .header button{
      border-radius: 7px;

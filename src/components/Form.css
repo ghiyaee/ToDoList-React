@@ -12,8 +12,9 @@
     outline: none;
 }
 .form .save{
-    background: rgb(185, 179, 179);
+      background: lightgreen;
     border-radius: 7px;
     border: none;
     cursor: pointer;
+    font-weight: bold;
 }

@@ -6,7 +6,12 @@
     margin: 5px;
     align-items: center;
     border: 1px solid rgb(204, 202, 202);
-    border-radius: 7px;
+    border-radius: 10px;
+
+}
+.items:hover{
+    background: rgb(207, 245, 207);
+    
 }
 .works{
     display: flex;
@@ -19,4 +24,7 @@
 
 .works p,h3{
     font-weight: bold;
+}
+.icon{
+    color:tomato
 }
