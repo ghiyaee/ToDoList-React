@@ -4,11 +4,11 @@ const Form = ({onValue}) => {
     const [work,setWork] = useState('')
     const [time, setTime] = useState('') 
     const onValidtion = (e) => {
-         if (!work) {
-             return
+         if (!work&&!time) {
+             return;
          }
         const id=Math.floor(Math.random()*1000)
-         const newCalender={id:id ,work:work,time:time}
+         const newCalender={id ,work,time}
         onValue(newCalender)
         setWork('')
         setTime('')

@@ -47,7 +47,7 @@ const App = () => {
         <div className="container">
             <Header text={text} onCliked={onCliked} />
             {drop ? <Form onValue={onAddValue} />: null}
-            {calender.length != 0 ? <Items value={calender} onDel={onDelHandel} /> : 'EMPTY  CALENDER'}
+            {calender.length != 0 ? <Items value={calender} onDel={onDelHandel} /> : `EMPTY  AT   CALENDER`}
         </div>
     )
 }
