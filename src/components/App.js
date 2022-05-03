@@ -1,9 +1,8 @@
-import { useState ,useEffect} from "react"
+import { useState} from "react"
 import "./App.css"
 import Header from "./Header"
 import Form from "./Form"
 import Items from "./Items"
-
 const calender = [
     {
         id: 1,
@@ -24,33 +23,30 @@ const calender = [
 const App = () => {
     const [drop, setDrop] = useState(false)
     const [calenders, setCalenders] = useState(calender)
-    const [text,setText]=useState('ADD')
-    const onCliked = () => {
+    const [text, setText] = useState('ADD')
+    const onShowInPut = () => {
         if (!drop) {
             setDrop(true)
-
             setText('CLOSE')
-   
         } else {
             setDrop(false)
             setText('ADD')
-       }
+        }
     }
     const onAddValue = (newCalender) => {
        const newCal = calender.push(newCalender)
-        setCalenders(newCal);
-       
+        setCalenders(newCal);  
     }
-    const onDelHandel = (e,index) => {
+    const onDeletItemHandel = (e,index) => {
         const filter = calender.splice(index,1)
         setCalenders(filter)
     }
     return (
         <>
         <div className="container">
-            <Header text={text} onCliked={onCliked} />
-            {drop ? <Form onValue={onAddValue}  />: null}
-            {calender.length != 0 ? <Items value={calender} onDel={onDelHandel} /> : `EMPTY  AT   CALENDER`}
+            <Header text={text} onShowInPut={onShowInPut} />
+            {drop ?<Form onValue={onAddValue} />: null}
+            {calender.length != 0 ? <Items value={calender} onDeletItem={onDeletItemHandel} /> : `EMPTY  AT   CALENDER`}
        </div>
         </>
     )

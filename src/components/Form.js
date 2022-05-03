@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Form.css";
-const Form = ({onValue}) => {
+const Form = ({ onValue }) => {
     const [work,setWork] = useState('')
     const [time, setTime] = useState('') 
     const onValidtion = (e) => {
@@ -12,10 +12,10 @@ const Form = ({onValue}) => {
         onValue(newCalender)
         setWork('')
         setTime('')
-          e.preventDefault()
+        e.preventDefault()
     }
-    return(
-            <div className="form"  >
+    return (
+            < div className = 'form'  >
             <input type="text"
                 value={work}
                 placeholder="INTER A WORKS DAILY"
@@ -34,7 +34,7 @@ const Form = ({onValue}) => {
                 className="save"
                 onClick={onValidtion} >
             </input>
-        </div>
+            </div>
     )
 }
 export default Form
