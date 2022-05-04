@@ -6,8 +6,12 @@ const Items = ({ value ,onDeletItem}) => {
               <div className='works'>
                  <h3>{el.work}</h3>
                   <p>{ el.time}</p>
-              </div>
-              <i className="trash icon" onClick={(e)=>onDeletItem(el.id,index)}></i>
+                </div>
+                <div>
+                <i className= "edit icon" ></i>
+                <i className= "trash icon" onClick={(e)=>onDeletItem(el.id,index)}></i>
+                </div>
+               
               </div>
         )
  })

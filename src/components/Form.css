@@ -4,7 +4,15 @@
     flex-direction: column;
     align-items: center;
     transition: all 1.5s ease-in-out;
+    
 }
+.active{
+        transform: translateY(0px);
+}
+/* .hiden{
+        transform: translateY(-1000px);
+          transition: all 1.5s ease-in-out;
+} */
 .form input{
     padding: 15px;
     margin: 10px;

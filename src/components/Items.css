@@ -27,5 +27,6 @@
     font-weight: bold;
 }
 .icon{
-    color:tomato
+    color:tomato;
+    cursor: pointer;
 }

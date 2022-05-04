@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Form.css";
-const Form = ({ onValue }) => {
+const Form = ({ onValue, style }) => {
+    console.log(style);
     const [work,setWork] = useState('')
     const [time, setTime] = useState('') 
     const onValidtion = (e) => {
@@ -15,7 +16,7 @@ const Form = ({ onValue }) => {
         e.preventDefault()
     }
     return (
-            < div className = 'form'  >
+            < div className = {`form ${style ? 'active':'hiden'}`}  >
             <input type="text"
                 value={work}
                 placeholder="INTER A WORKS DAILY"
