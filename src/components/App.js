@@ -43,7 +43,9 @@ const App = () => {
         setCalenders(filter)
     }
     const onMove = (e) => {
-      setInput(e)
+        setInput(e)
+         setDrop(true)
+         setText('CLOSE')
     }
     return (
         <>
