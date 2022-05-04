@@ -5,6 +5,10 @@
     align-items: center;
     transition: all 1.5s ease-in-out;
     transform: translateY(-1000px); 
+    /* background: rgb(196, 235, 196); */
+    box-shadow: 0px 0px 8px 3px rgb(100, 172, 100);
+    border-radius: 7px;
+    margin-bottom: 8px;
 }
 .active{
         transform: translateY(0px);
@@ -16,7 +20,9 @@
     width: 65%;
     border: none;
     outline: none;
-    border-bottom: 2px solid rgba(1, 209, 105, 0.884);
+    border-bottom: 2.5px solid rgba(1, 209, 105, 0.884);
+    border-radius: 7px;
+    background: rgb(245, 249, 252);
 }
 .form .save{
     background: lightgreen;
