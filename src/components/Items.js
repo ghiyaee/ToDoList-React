@@ -8,7 +8,7 @@ const Items = ({ value, onDeletItem,item,drop }) => {
                   <p>{ el.time}</p>
                 </div>
                 <div>
-                <i className= "edit icon" onClick={e=>item(el)}></i>
+                <i className= "edit icon" onClick={e=>item(el,index)}></i>
                 <i className= "trash icon" onClick={(e)=>onDeletItem(el.id,index)}></i>
                 </div>   
           </div>

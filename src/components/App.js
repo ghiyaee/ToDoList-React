@@ -24,7 +24,7 @@ const App = () => {
     const [drop, setDrop] = useState(false)
     const [calenders, setCalenders] = useState(calender)
     const [input,setInput]=useState('')
-    const [text, setText] = useState('ADD')
+    const [text, setText] = useState('ADD / EDIT')
     const onShowInPut = () => {
         if (!drop) {
             setDrop(true)
@@ -49,8 +49,12 @@ const App = () => {
         <>
         <div className="container">
             <Header text={text} onShowInPut={onShowInPut} />
-            <Form onValue={onAddValue} drop={drop} onMoveHandel={input}  />
-                {calender.length != 0 ? <Items value={calender} onDeletItem={onDeletItemHandel} item={onMove} drop={drop}/> : `EMPTY  AT   CALENDER`}
+            <Form onValue={onAddValue} drop={drop} editValue={input}  />
+                {calender.length != 0 ?
+                    <Items value={calender}
+                        onDeletItem={onDeletItemHandel}
+                        item={onMove} drop={drop} />
+                    : `EMPTY  AT   CALENDER`}
        </div>
         </>
     )
