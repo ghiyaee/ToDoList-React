@@ -24,7 +24,7 @@ const App = () => {
     const [drop, setDrop] = useState(false)
     const [calenders, setCalenders] = useState(calender)
     const [input,setInput]=useState('')
-    const [text, setText] = useState('ADD / EDIT')
+    const [text, setText] = useState('ADD ')
     const onShowInPut = () => {
         if (!drop) {
             setDrop(true)
@@ -45,7 +45,7 @@ const App = () => {
     const onMove = (e) => {
         setInput(e)
          setDrop(true)
-         setText('CLOSE')
+         setText('EDIT')
     }
     return (
         <>
