@@ -20,18 +20,16 @@ const calender = [
         time: '16:30 to 18:30'
     },
 ]
-// let drop=false
 const App = () => {
     const [drop, setDrop] = useState(false)
     const [calenders, setCalenders] = useState(calender)
+    const [input,setInput]=useState('')
     const [text, setText] = useState('ADD')
     const onShowInPut = () => {
         if (!drop) {
-            // drop=true
             setDrop(true)
             setText('CLOSE')
         } else {
-            // drop=false
             setDrop(false)
             setText('ADD')
         }
@@ -44,12 +42,15 @@ const App = () => {
         const filter = calender.splice(index,1)
         setCalenders(filter)
     }
+    const onMove = (e) => {
+      setInput(e)
+    }
     return (
         <>
         <div className="container">
             <Header text={text} onShowInPut={onShowInPut} />
-            {drop ?<Form onValue={onAddValue} style={drop} />: null}
-            {calender.length != 0 ? <Items value={calender} onDeletItem={onDeletItemHandel} /> : `EMPTY  AT   CALENDER`}
+            <Form onValue={onAddValue} drop={drop} onMoveHandel={input}  />
+                {calender.length != 0 ? <Items value={calender} onDeletItem={onDeletItemHandel} item={onMove} drop={drop}/> : `EMPTY  AT   CALENDER`}
        </div>
         </>
     )

@@ -1,9 +1,10 @@
 import { useState } from "react";
+import Items from "./Items";
 import "./Form.css";
-const Form = ({ onValue, style }) => {
-    console.log(style);
-    const [work,setWork] = useState('')
-    const [time, setTime] = useState('') 
+const Form = ({ onValue, drop, onMoveHandel }) => {
+    console.log(onMoveHandel);
+    const [work, setWork] = useState(onMoveHandel.work)
+    const [time, setTime] = useState(onMoveHandel.time) 
     const onValidtion = (e) => {
          if (!work && !time) {
              return 
@@ -16,7 +17,7 @@ const Form = ({ onValue, style }) => {
         e.preventDefault()
     }
     return (
-            < div className = {`form ${style ? 'active':'hiden'}`}  >
+            < div className = {`form ${drop ? 'active':'hiden'}`}  >
             <input type="text"
                 value={work}
                 placeholder="INTER A WORKS DAILY"

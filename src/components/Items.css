@@ -1,3 +1,14 @@
+.drop{
+       width:100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       transform: translateY(-220px);
+       transition: all 1.5s ;
+}
+.down{
+     transform: translateY(0px);
+}
 .items{
     width: 70%;
     display: flex;
@@ -7,7 +18,7 @@
     align-items: center;
     border: 1px solid rgb(204, 202, 202);
     border-radius: 10px;
-
+  
 }
 .items:hover{
     background: rgb(207, 245, 207);
