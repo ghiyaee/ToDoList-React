@@ -59,7 +59,7 @@ const App = () => {
         <>
         <div className="container">
             <Header text={text} onShowInPut={onShowInPut} />
-            <Form onValue={onAddValue} drop={drop} editValue={input} onEdit={onEdit} />
+            <Form onValue={onAddValue} drop={drop} editValue={input} onEdit={onEdit} text={text} />
                 {calender.length != 0 ?
                     <Items value={calender}
                         onDeletItem={onDeletItemHandel}

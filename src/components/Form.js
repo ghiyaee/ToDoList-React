@@ -1,6 +1,6 @@
 import { useState , useEffect} from "react";
 import "./Form.css";
-const Form = ({ onValue, drop, editValue ,onEdit }) => {
+const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
     const { work: editWork, time: editTimes, id } = editValue
     const [work, setWork] = useState('')
     const [time, setTime] = useState('') 
@@ -45,17 +45,15 @@ const Form = ({ onValue, drop, editValue ,onEdit }) => {
                 placeholder="INTER A CLOCK "
                 onChange={e => { setTime(e.target.value) }}>
             </input>
-            <input type="checkbox"
-                placeholder="inter a work" >
-            </input>
-            <input type="submit "
+            
+            <input type="submit"
                 value="SAVE"
-                className={`save ${!drop ?'show':''}`}
+                className={`save ${text =='CLOSE' ?'show':'hedin'}`}
                 onClick={onValidtion} >
             </input>
              <input type="submit"
-                value="EIDT"
-                className={`edit ${drop ?'show':''}`}
+                value="UPDATA"
+                className={`edit ${text =='CLOSE' ? 'hedin':'show'}`}
                 onClick={onEditValue} >
             </input>
         </div>

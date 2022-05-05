@@ -24,6 +24,8 @@
     border-bottom: 2.5px solid rgba(1, 209, 105, 0.884);
     border-radius: 7px;
     background: rgb(245, 249, 252);
+    color: tomato;
+    font-weight: bold;
 }
 .form .save{
     background: lightgreen;
