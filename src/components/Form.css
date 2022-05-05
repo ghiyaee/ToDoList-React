@@ -32,3 +32,16 @@
     cursor: pointer;
     font-weight: bold;
 }
+.form .edit{
+    background: lightgreen;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.hedin{
+    display: none;
+}
+.show{
+    display: block;
+}

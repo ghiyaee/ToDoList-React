@@ -3,7 +3,7 @@ import "./App.css"
 import Header from "./Header"
 import Form from "./Form"
 import Items from "./Items"
-const calender = [
+let calender = [
     {
         id: 1,
         work: 'CODEING',
@@ -34,9 +34,9 @@ const App = () => {
             setText('ADD')
         }
     }
-    const onAddValue = (newCalender) => {
-       const newCal = calender.push(newCalender)
-        setCalenders(newCal);  
+    const onAddValue = (newCalender) => { 
+           const newCal = calender.push(newCalender)
+            setCalenders(newCal);  
     }
     const onDeletItemHandel = (e,index) => {
         const filter = calender.splice(index,1)
@@ -47,16 +47,24 @@ const App = () => {
          setDrop(true)
          setText('EDIT')
     }
+    const onEdit = ({id,work,time}) => {
+        const newcalender = calender.map(el => {
+            if (id === el.id) {
+               return  el.work=work,el.time=time
+           }
+        })
+        setCalenders(newcalender)
+    }
     return (
         <>
         <div className="container">
             <Header text={text} onShowInPut={onShowInPut} />
-            <Form onValue={onAddValue} drop={drop} editValue={input}  />
+            <Form onValue={onAddValue} drop={drop} editValue={input} onEdit={onEdit} />
                 {calender.length != 0 ?
                     <Items value={calender}
                         onDeletItem={onDeletItemHandel}
                         item={onMove} drop={drop} />
-                    : `EMPTY  AT   CALENDER`}
+                 : `EMPTY  AT   CALENDER`}
        </div>
         </>
     )
