@@ -26,6 +26,7 @@
     background: rgb(245, 249, 252);
     color: tomato;
     font-weight: bold;
+    
 }
 .form .save{
     background: lightgreen;
@@ -33,6 +34,8 @@
     border: none;
     cursor: pointer;
     font-weight: bold;
+    font-size: 1.8rem;
+    transition: all 1s ease-in-out;
 }
 .form .edit{
     background: lightgreen;
@@ -40,6 +43,16 @@
     border: none;
     cursor: pointer;
     font-weight: bold;
+    font-size: 1.8rem;
+    transition: all 1s ease-in-out;
+}
+.form .savet:hover{
+background: #000;
+color:#fff
+}
+.form .edit:hover{
+background: #000;
+color:#fff
 }
 .hedin{
     display: none;

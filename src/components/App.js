@@ -47,7 +47,7 @@ const App = () => {
          setDrop(true)
          setText('EDIT')
     }
-    const onEdit = ({id,work,time}) => {
+    const onEdit = ({id,work,time,text}) => {
         const newcalender = calender.map(el => {
             if (id === el.id) {
                return  el.work=work,el.time=time

@@ -17,21 +17,19 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
           setTime('')
           e.preventDefault()       
     }
-    const onEditValue = (e) => {
+    const onEditValue = () => {
           const newCalender = {
               id,
               work,
-              time
+              time,
           }
           onEdit(newCalender)
           setWork('')
-          setTime('')
-          e.preventDefault()
-        
+          setTime('') 
   }
     useEffect(() => {
-        setWork(editWork)
-        setTime(editTimes)
+        setWork(editWork ||'')
+        setTime(editTimes || '')
     },[editValue])
     return (
         < div className={`form ${drop ? 'active' : 'hiden'}`}  >
@@ -45,15 +43,14 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
                 placeholder="INTER A CLOCK "
                 onChange={e => { setTime(e.target.value) }}>
             </input>
-            
             <input type="submit"
                 value="SAVE"
-                className={`save ${text =='CLOSE' ?'show':'hedin'}`}
+                className={`save ${text ==='CLOSE' ?'show':'hedin'}`}
                 onClick={onValidtion} >
             </input>
              <input type="submit"
                 value="UPDATA"
-                className={`edit ${text =='CLOSE' ? 'hedin':'show'}`}
+                className={`edit ${text ==='CLOSE' ? 'hedin':'show'}`}
                 onClick={onEditValue} >
             </input>
         </div>
