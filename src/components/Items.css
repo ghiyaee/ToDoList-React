@@ -4,7 +4,8 @@
        flex-direction: column;
        align-items: center;
        transform: translateY(-220px);
-       transition: all 1.5s ;
+       transition: all 1.3s ;
+       transition-delay: 0.4s;
 }
 .down{
      transform: translateY(0px);
