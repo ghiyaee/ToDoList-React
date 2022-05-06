@@ -11,7 +11,10 @@ const App = () => {
     const [calenders, setCalenders] = useState([])
     const [input,setInput]=useState('')
     const [text, setText] = useState('ADD ')
-
+  const request = async () => {
+      const respons = await (await fetch('http://localhost:8000/calenders')).json()
+      return respons;
+  }
     useEffect(() => {
         const respons = async () => {
             const calender = await request()
@@ -19,14 +22,7 @@ const App = () => {
         }
         respons()
     }, [])
-    //  const request = async () => {
-    //      const respons = await (await Request.get('/calenders')).json()
-    //      return respons
-    //  }
-    const request = async () => {
-        const respons = await (await fetch('http://localhost:8000/calenders')).json()
-        return respons
-    }
+  
     const onShowInPut = () => {
         if (!drop) {
             setDrop(true)
@@ -36,13 +32,31 @@ const App = () => {
             setText('ADD')
         }
     }
-    const onAddValue = (newCalender) => { 
-           const newCal = calenders.push(newCalender)
-            setCalenders(newCal);  
+    const onAddValue = async (newCalender) => { 
+        const resultAdd = await fetch('http://localhost:8000/calenders', {
+            method: 'POST',
+            headers: {
+                'Content-type':'application/json'
+            },
+            body:JSON.stringify(newCalender)
+        })
+           const data = await resultAdd.json()
+        
+        // for static
+        //    const newCal = calenders.push(data) 
+        // setCalenders(newCal);
+         window.location.reload()
+       
     }
-    const onDeletItemHandel = (e,index) => {
-        const filter = calenders.splice(index,1)
-        setCalenders(filter)
+    const onDeletItemHandel = async (id, index) => {
+        console.log(id);
+        await fetch(`http://localhost:8000/calenders/${id}`, {
+            method: 'DELETE',
+        });
+        // for static
+        // const filter = calenders.splice(index,1)
+        // setCalenders(filter)
+        window.location.reload()
     }
     const onMove = (e) => {
          setInput(e)
