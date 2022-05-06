@@ -1,30 +1,32 @@
-import { useState} from "react"
+import { useState,useEffect} from "react"
 import "./App.css"
 import Header from "./Header"
 import Form from "./Form"
 import Items from "./Items"
-let calender = [
-    {
-        id: 1,
-        work: 'CODEING',
-        time: '7:30 to 90:30'
-    },
-    {
-        id: 2,
-        work: 'RUNING',
-        time: '10:00 to 11:30'
-    },
-    {
-        id: 3,
-        work: 'READING',
-        time: '16:30 to 18:30'
-    },
-]
+// import axios from "axios"
+import Request from '../api/Request'
+// const calender = []
 const App = () => {
     const [drop, setDrop] = useState(false)
-    const [calenders, setCalenders] = useState(calender)
+    const [calenders, setCalenders] = useState([])
     const [input,setInput]=useState('')
     const [text, setText] = useState('ADD ')
+
+    useEffect(() => {
+        const respons = async () => {
+            const calender = await request()
+            setCalenders(calender)
+        }
+        respons()
+    }, [])
+    //  const request = async () => {
+    //      const respons = await (await Request.get('/calenders')).json()
+    //      return respons
+    //  }
+    const request = async () => {
+        const respons = await (await fetch('http://localhost:8000/calenders')).json()
+        return respons
+    }
     const onShowInPut = () => {
         if (!drop) {
             setDrop(true)
@@ -35,11 +37,11 @@ const App = () => {
         }
     }
     const onAddValue = (newCalender) => { 
-           const newCal = calender.push(newCalender)
+           const newCal = calenders.push(newCalender)
             setCalenders(newCal);  
     }
     const onDeletItemHandel = (e,index) => {
-        const filter = calender.splice(index,1)
+        const filter = calenders.splice(index,1)
         setCalenders(filter)
     }
     const onMove = (e) => {
@@ -48,7 +50,7 @@ const App = () => {
          setText('EDIT')
     }
     const onEdit = ({id,work,time,text}) => {
-        const newcalender = calender.map(el => {
+        const newcalender = calenders.map(el => {
             if (id === el.id) {
                return  el.work=work,el.time=time
            }
@@ -60,11 +62,11 @@ const App = () => {
         <div className="container">
             <Header text={text} onShowInPut={onShowInPut} />
             <Form onValue={onAddValue} drop={drop} editValue={input} onEdit={onEdit} text={text} />
-                {calender.length != 0 ?
-                    <Items value={calender}
+              
+                    <Items value={calenders}
                         onDeletItem={onDeletItemHandel}
                         item={onMove} drop={drop} />
-                 : `EMPTY  AT   CALENDER`}
+               
        </div>
         </>
     )
