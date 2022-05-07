@@ -82,19 +82,25 @@ const App = () => {
         //  })
         //  setCalenders(newcalender)
         }
-
-       
-
     return (
         <>
         <div className="container">
-            <Header text={text} onShowInPut={onShowInPut} />
-            <Form onValue={onAddValue} drop={drop} editValue={input} onEdit={onEdit} text={text} />
-              
-                    <Items value={calenders}
-                        onDeletItem={onDeletItemHandel}
-                        item={onMove} drop={drop} />
-               
+                <Header
+                    text={text}
+                    onShowInPut={onShowInPut}
+                />
+                <Form
+                    onValue={onAddValue}
+                    drop={drop}
+                    editValue={input}
+                    onEdit={onEdit}
+                    text={text}
+                />
+                <Items
+                    value={calenders}
+                    onDeletItem={onDeletItemHandel}
+                    item={onMove} drop={drop}
+                />     
        </div>
         </>
     )

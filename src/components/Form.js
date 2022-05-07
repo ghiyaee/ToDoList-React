@@ -33,25 +33,33 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
     },[editValue])
     return (
         < div className={`form ${drop ? 'active' : 'hiden'}`}  >
-            <input type="text"
+            <input
+                type="text"
                 value={work}
                 placeholder="INTER A WORKS DAILY"
-                onChange={e => { setWork(e.target.value) }}>
+                onChange={e => { setWork(e.target.value) }}
+            >
             </input>
-            <input type="text"
+            <input
+                type="text"
                 value={time}
                 placeholder="INTER A CLOCK "
-                onChange={e => { setTime(e.target.value) }}>
+                onChange={e => { setTime(e.target.value) }}
+            >
             </input>
-            <input type="submit"
+            <input
+                type="submit"
                 value="SAVE"
                 className={`save ${text ==='CLOSE' ?'show':'hedin'}`}
-                onClick={onValidtion} >
+                onClick={onValidtion}
+            >
             </input>
-             <input type="submit"
+            <input
+                type="submit"
                 value="UPDATA"
                 className={`edit ${text ==='CLOSE' ? 'hedin':'show'}`}
-                onClick={onEditValue} >
+                onClick={onEditValue}
+            >
             </input>
         </div>
     );
