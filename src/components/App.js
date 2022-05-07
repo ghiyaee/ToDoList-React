@@ -3,8 +3,7 @@ import "./App.css"
 import Header from "./Header"
 import Form from "./Form"
 import Items from "./Items"
-// import axios from "axios"
-import Request from '../api/Request'
+// for static
 // const calender = []
 const App = () => {
     const [drop, setDrop] = useState(false)
