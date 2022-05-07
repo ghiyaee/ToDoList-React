@@ -63,14 +63,28 @@ const App = () => {
          setDrop(true)
          setText('EDIT')
     }
-    const onEdit = ({id,work,time,text}) => {
-        const newcalender = calenders.map(el => {
-            if (id === el.id) {
-               return  el.work=work,el.time=time
-           }
-        })
-        setCalenders(newcalender)
-    }
+    const onEdit = async (newCalender) => {
+        console.log(newCalender.id);
+            const res = await fetch(`http://localhost:8000/calenders/${newCalender.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(newCalender)
+            })
+            window.location.reload()
+        // const data = await res.json()
+        // for static
+        //  const newcalender = calenders.map(el => {
+        //      if (newCalender.id === el.id) {
+        //          return el.work = newCalender.work, el.time = newCalender.time
+        //      }
+        //  })
+        //  setCalenders(newcalender)
+        }
+
+       
+
     return (
         <>
         <div className="container">
