@@ -8,11 +8,12 @@
 }
 .content{
     color: rgb(219, 38, 38);
+   
 }
 .header h3 ,button{
     padding: 10px;
     margin: 5px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 .header button{
      border-radius: 7px;
