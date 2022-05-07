@@ -57,8 +57,8 @@ const App = () => {
         // setCalenders(filter)
         window.location.reload()
     }
-    const onMove = (e) => {
-         setInput(e)
+    const onMove = (value) => {
+         setInput(value)
          setDrop(true)
          setText('EDIT')
     }

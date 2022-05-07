@@ -6,6 +6,9 @@
     border-radius: 7px;
      border: 2px solid rgb(172, 165, 165);
 }
+.content{
+    color: rgb(219, 38, 38);
+}
 .header h3 ,button{
     padding: 10px;
     margin: 5px;
