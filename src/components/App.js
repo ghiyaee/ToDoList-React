@@ -42,9 +42,8 @@ const App = () => {
            const data = await resultAdd.json()
         
         // for static
-        //    const newCal = calenders.push(data) 
-        // setCalenders(newCal);
-         window.location.reload()
+           const newCal =[...calenders,data]
+           setCalenders(newCal);
        
     }
     const onDeletItemHandel = async (id, index) => {
@@ -53,9 +52,8 @@ const App = () => {
             method: 'DELETE',
         });
         // for static
-        // const filter = calenders.splice(index,1)
-        // setCalenders(filter)
-        window.location.reload()
+        const filter = calenders.filter(f=> f.id !=id)
+        setCalenders(filter)
     }
     const onMove = (value) => {
          setInput(value)
@@ -71,15 +69,16 @@ const App = () => {
                 },
                 body: JSON.stringify(newCalender)
             })
-            window.location.reload()
-        // const data = await res.json()
+            // window.location.reload()
+           const data = await res.json()
         // for static
-        //  const newcalender = calenders.map(el => {
-        //      if (newCalender.id === el.id) {
-        //          return el.work = newCalender.work, el.time = newCalender.time
-        //      }
-        //  })
-        //  setCalenders(newcalender)
+        console.log(data);
+         const newcalender = calenders.map(el => {
+             if (newCalender.id === el.id) {
+                 return el.work = newCalender.work, el.time = newCalender.time
+             }
+               })
+         setCalenders(newcalender)
         }
     return (
         <>
