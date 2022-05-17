@@ -15,7 +15,7 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
           onValue(newCalender)
           setWork('')
           setTime('')
-          e.preventDefault()       
+        //   e.preventDefault()       
     }
     const onEditValue = () => {
           const newCalender = {

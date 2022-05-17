@@ -3,17 +3,17 @@ import "./App.css"
 import Header from "./Header"
 import Form from "./Form"
 import Items from "./Items"
-// for static
+// for ui
 // const calender = []
 const App = () => {
     const [drop, setDrop] = useState(false)
     const [calenders, setCalenders] = useState([])
-    const [input,setInput]=useState('')
+    const [input, setInput] = useState('')
     const [text, setText] = useState('ADD ')
-  const request = async () => {
-      const respons = await (await fetch('http://localhost:8000/calenders')).json()
-      return respons;
-  }
+    const request = async () => {
+        const respons = await (await fetch('http://localhost:8000/calenders')).json()
+        return respons;
+    }
     useEffect(() => {
         const respons = async () => {
             const calender = await request()
@@ -31,19 +31,19 @@ const App = () => {
             setText('ADD')
         }
     }
-    const onAddValue = async (newCalender) => { 
+    const onAddValue = async (newCalender) => {
         const resultAdd = await fetch('http://localhost:8000/calenders', {
             method: 'POST',
             headers: {
-                'Content-type':'application/json'
+                'Content-type': 'application/json'
             },
-            body:JSON.stringify(newCalender)
+            body: JSON.stringify(newCalender)
         })
-           const data = await resultAdd.json()
+        const data = await resultAdd.json()
         
-        // for static
-           const newCal =[...calenders,data]
-           setCalenders(newCal);
+        // for ui
+        const newCal = [...calenders, data]
+        setCalenders(newCal);
        
     }
     const onDeletItemHandel = async (id, index) => {
@@ -51,35 +51,35 @@ const App = () => {
         await fetch(`http://localhost:8000/calenders/${id}`, {
             method: 'DELETE',
         });
-        // for static
-        const filter = calenders.filter(f=> f.id !=id)
+        // for ui
+        const filter = calenders.filter(f => f.id != id)
         setCalenders(filter)
     }
     const onMove = (value) => {
-         setInput(value)
-         setDrop(true)
-         setText('EDIT')
+        setInput(value)
+        setDrop(true)
+        setText('EDIT')
     }
     const onEdit = async (newCalender) => {
-        console.log(newCalender.id);
-            const res = await fetch(`http://localhost:8000/calenders/${newCalender.id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(newCalender)
-            })
-            // window.location.reload()
-           const data = await res.json()
-        // for static
+        const res = await fetch(`http://localhost:8000/calenders/${newCalender.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+                  body: JSON.stringify(newCalender)
+             })
+        const data = await res.json()
         console.log(data);
-         const newcalender = calenders.map(el => {
-             if (newCalender.id === el.id) {
-                 return el.work = newCalender.work, el.time = newCalender.time
-             }
-               })
-         setCalenders(newcalender)
-        }
+        // for update ui
+        const newcalender = calenders.map(el => {
+            if (el.id === data.id) {
+               return  el=data
+            } else {
+                return el
+           }
+        })
+        setCalenders(newcalender)
+    }
     return (
         <>
             <div className="container">
@@ -98,9 +98,9 @@ const App = () => {
                     value={calenders}
                     onDeletItem={onDeletItemHandel}
                     item={onMove} drop={drop}
-                />     
-       </div>
+                />
+            </div>
         </>
-    )
-}
-export default App
+    );
+};
+export default App;
