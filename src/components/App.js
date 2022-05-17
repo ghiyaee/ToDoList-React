@@ -31,6 +31,7 @@ const App = () => {
             setText('ADD')
         }
     }
+    // for add db
     const onAddValue = async (newCalender) => {
         const resultAdd = await fetch('http://localhost:8000/calenders', {
             method: 'POST',
@@ -46,8 +47,8 @@ const App = () => {
         setCalenders(newCal);
        
     }
+    // for delete db
     const onDeletItemHandel = async (id, index) => {
-        console.log(id);
         await fetch(`http://localhost:8000/calenders/${id}`, {
             method: 'DELETE',
         });
@@ -60,6 +61,8 @@ const App = () => {
         setDrop(true)
         setText('EDIT')
     }
+
+    // for update db
     const onEdit = async (newCalender) => {
         const res = await fetch(`http://localhost:8000/calenders/${newCalender.id}`, {
             method: 'PUT',
@@ -69,8 +72,8 @@ const App = () => {
                   body: JSON.stringify(newCalender)
              })
         const data = await res.json()
-        console.log(data);
-        // for update ui
+    
+    // for update ui
         const newcalender = calenders.map(el => {
             if (el.id === data.id) {
                return  el=data
