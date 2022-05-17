@@ -2,12 +2,12 @@
   "calenders": [
     {
       "id": 132,
-      "work": "Codeing",
+      "work": "Code",
       "time": "9.30 am to 12.30 am"
     },
     {
       "id": 54,
-      "work": "Reading",
+      "work": "Read",
       "time": "15.30 pm to 18.30 pm"
     }
   ]

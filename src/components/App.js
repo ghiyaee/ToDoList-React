@@ -75,12 +75,8 @@ const App = () => {
     
     // for update ui
         const newcalender = calenders.map(el => {
-            if (el.id === data.id) {
-               return  el=data
-            } else {
-                return el
-           }
-        })
+            return el.id === data.id ? el = data : el;
+         })
         setCalenders(newcalender)
     }
     return (
