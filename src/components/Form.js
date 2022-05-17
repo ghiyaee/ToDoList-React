@@ -46,21 +46,24 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
                 placeholder="INTER A CLOCK "
                 onChange={e => { setTime(e.target.value) }}
             >
-            </input>
-            <input
-                type="submit"
-                value="SAVE"
-                className={`save ${text ==='CLOSE' ?'show':'hedin'}`}
-                onClick={onValidtion}
-            >
-            </input>
-            <input
-                type="submit"
-                value="UPDATA"
-                className={`edit ${text ==='CLOSE' ? 'hedin':'show'}`}
-                onClick={onEditValue}
-            >
-            </input>
+            </input >
+            < div className = "hand__update__save" >
+                  < i className = "hand point right icon" > </i>
+                    <input
+                        type="submit"
+                        value="SAVE"
+                        className={`save ${text ==='CLOSE' ?'show':'hedin'}`}
+                        onClick={onValidtion}
+                    >
+                    </input>
+                    <input
+                        type="submit"
+                        value="UPDATA"
+                        className={`edit ${text ==='CLOSE' ? 'hedin':'show'}`}
+                        onClick={onEditValue}
+                    > 
+                    </input>
+                </div>
         </div>
     );
 }

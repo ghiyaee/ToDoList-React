@@ -43,7 +43,7 @@
     border: none;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     transition: all 1s ease-in-out;
 }
 .form .savet:hover{
@@ -59,4 +59,11 @@ color:#fff
 }
 .show{
     display: block;
+}
+.hand__update__save{
+    display: flex;
+    align-items: center;
+}
+.hand{
+    color: #000 !important;
 }
