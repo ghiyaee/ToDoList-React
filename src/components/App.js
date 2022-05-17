@@ -53,7 +53,7 @@ const App = () => {
             method: 'DELETE',
         });
         // for ui
-        const filter = calenders.filter(f => f.id != id)
+        const filter = calenders.filter(filter => filter.id != id)
         setCalenders(filter)
     }
     const onMove = (value) => {
@@ -74,8 +74,8 @@ const App = () => {
         const data = await res.json()
     
     // for update ui
-        const newcalender = calenders.map(el => {
-            return el.id === data.id ? el = data : el;
+        const newcalender = calenders.map(item => {
+            return item.id === data.id ? item = data : item;
          })
         setCalenders(newcalender)
     }
