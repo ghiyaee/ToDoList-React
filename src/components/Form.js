@@ -3,10 +3,14 @@ import "./Form.css";
 const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
     const { work: editWork, time: editTimes, id } = editValue
     const [work, setWork] = useState('')
-    const [time, setTime] = useState('') 
+    const [time, setTime] = useState('')
+    const [alert,setLert]=useState('')
     const onValidtion = (e) => {
-         if (work === '' || time === ''  ) {
-             return;
+        if (work === '' || time === '') {
+            // setLert('please inter values')
+            // setTime(() => {
+            //     setLert('s')
+            // },2500)
           }
           const id = Math.floor(Math.random() * 1000)
           const newCalender = {
@@ -15,6 +19,7 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
           onValue(newCalender)
           setWork('')
           setTime('')
+          setLert('Save Done')
           e.preventDefault()       
     }
     const onEditValue = () => {
@@ -25,7 +30,8 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
           }
           onEdit(newCalender)
           setWork('')
-          setTime('') 
+        setTime('') 
+         setLert('Update Done')
   }
     useEffect(() => {
         setWork(editWork ||'')
@@ -47,6 +53,7 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
                 onChange={e => { setTime(e.target.value) }}
             >
             </input >
+            <span className={`${alert === ''} ? 'hedin': 'show'`}>{alert }</span>
             < div className = "hand__update__save" >
                   < i className = "hand point right icon" > </i>
                     <input
