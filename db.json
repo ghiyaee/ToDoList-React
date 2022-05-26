@@ -1,16 +1,6 @@
 {
   "calenders": [
     {
-      "id": 132,
-      "work": "Codeing",
-      "time": "9.30 am to 12.30 pmz"
-    },
-    {
-      "id": 566,
-      "work": "Reading",
-      "time": "14.30 pm to 15.30 pm"
-    },
-    {
       "id": 335,
       "work": "Runing",
       "time": "18.30 pm to 19.30 pm"
@@ -19,31 +9,6 @@
       "id": 38,
       "work": "Sleeping",
       "time": "24 pm"
-    },
-    {
-      "id": 639,
-      "work": "12",
-      "time": "125"
-    },
-    {
-      "id": 583,
-      "work": "sssss",
-      "time": "sssAA"
-    },
-    {
-      "id": 642,
-      "work": "",
-      "time": ""
-    },
-    {
-      "id": 377,
-      "work": "",
-      "time": ""
-    },
-    {
-      "id": 228,
-      "work": "",
-      "time": ""
     }
   ]
 }
