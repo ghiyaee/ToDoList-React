@@ -54,17 +54,17 @@
    color:#fff
 }
 .alert{
-    background: rgb(245, 33, 33);
-    color: white;
-    padding: 5px;
+    color: rgb(245,33,33);
     border-radius: 6px;
     font-size: 1.5rem;
+    transition: all 1s;
 }
 .hedin{
     display: none;
 }
 .show{
     display: block;
+    
 }
 .hand__update__save{
     display: flex;

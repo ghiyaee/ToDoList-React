@@ -7,7 +7,10 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
     const [alert,setLert]=  useState('')
     const onValidtion = (e) => {
         if (work === '' || time === '') {
-         setLert('please inter values')
+            setLert('please inter values')
+            setTimeout(() => {
+               setLert('') 
+            },2200)
             return
            }
           const id = Math.floor(Math.random() * 1000)
@@ -18,6 +21,9 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
           setWork('')
           setTime('')
           setLert('Save Done')
+          setTimeout(() => {
+                setLert('')
+          }, 1900);
           e.preventDefault()       
     }
     const onEditValue = () => {
@@ -33,7 +39,9 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
           setWork('')
           setTime('') 
          setLert('Update Done')
-        
+         setTimeout(() => {
+             setLert('')
+         }, 1500);
   }
     useEffect(() => {
         setWork(editWork ||'')
@@ -55,9 +63,13 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
                 onChange={e => { setTime(e.target.value) }}
             >
             </input >
-            <span className={ ` ${alert === ''} ? 'hedin': 'show'`}>{alert }</span>
+            
+    <div className={`alert ${alert === ''} ? 'hedin': 'show'`}>
+            <span>{alert}</span>
+           <i className={`hand  up icon hedin ${alert === ''? null:'point'}`} ></i>
+     </div>
             < div className = "hand__update__save" >
-                  < i className = "hand point right icon" > </i>
+                  <i className = "hand point right icon" ></i>
                     <input
                         type="submit"
                         value="SAVE"
