@@ -44,14 +44,6 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
              setLert('')
          }, 2000);
        
-    //     if (onRef) {
-    //         setTimeout(() => {
-                
-    //         //  onRef.current. className='hedin'
-    //             onRef.current.style.transform = 'translateX(-2000px)'
-
-    //         },1900)
-    //    }
   }
     useEffect(() => {
         setWork(editWork ||'')
