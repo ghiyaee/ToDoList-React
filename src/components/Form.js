@@ -1,10 +1,11 @@
-import { useState , useEffect} from "react";
+import { useState , useEffect,useRef} from "react";
 import "./Form.css";
 const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
     const { work: editWork, time: editTimes, id } = editValue
     const [work, setWork] = useState('')
     const [time, setTime] = useState('')
-    const [alert,setLert]=  useState('')
+    const [alert, setLert] = useState('')
+    const onRef=useRef()
     const onValidtion = (e) => {
         if (work === '' || time === '') {
             setLert('please inter values')
@@ -42,13 +43,20 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
          setTimeout(() => {
              setLert('')
          }, 1500);
+        if (onRef) {
+            setTimeout(() => {
+                
+             onRef.current. className='hedin'
+            //    onRef.current.style.transform= 'translateX(-2000px)'
+            },1900)
+       }
   }
     useEffect(() => {
         setWork(editWork ||'')
         setTime(editTimes || '')
     },[editValue])
     return (
-        < div className={`form ${drop ? 'active' : 'hiden'}`}  >
+        < div className={`form ${drop ? 'active' : 'hiden'}`} ref={onRef} >
             <input
                 type="text"
                 value={work}
