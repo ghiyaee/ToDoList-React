@@ -13,8 +13,15 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
                setLert('') 
             },2200)
             return
-           }
-          const id = Math.floor(Math.random() * 1000)
+        }
+        if (work.length <= 4 && time.length <=4) {
+            setLert('you should a 4 char more')
+            setTimeout(() => {
+                setLert('')
+            }, 2200)
+            return
+        }
+        const id = Math.floor(Math.random() * 1000)
           const newCalender = {
             id, work,time
           }
@@ -54,14 +61,14 @@ const Form = ({ onValue, drop, editValue ,onEdit ,text}) => {
             <input
                 type="text"
                 value={work}
-                placeholder="INTER A WORKS DAILY"
+                placeholder="Inter A Works Daily"
                 onChange={e => { setWork(e.target.value) }}
             >
             </input>
             <input
                 type="text"
                 value={time}
-                placeholder="INTER A CLOCK "
+                placeholder="Inter A Clock "
                 onChange={e => { setTime(e.target.value) }}
             >
             </input >
